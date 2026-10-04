@@ -10,3 +10,5 @@ Para cualquier cambio en el header o el footer solo habría que cambiar el layou
 Todo el resto de cambios que tienen que ver con el HTML se cambian en el XML.
 
 En el visor HTML de la aplicación también se puede ver el código HTML generado así como visualizar la página WEB solo con el HTML sin el CSS, JS y elementos multimedia.
+
+El achecker para el HTML me da un likely problem de ascii en la etiqueta pre y code. Al no generar dibujos ascii y ser HTML generado, lo he dejado así.

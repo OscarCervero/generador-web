@@ -10,9 +10,9 @@
 <body>
   <header>
     <nav aria-label="Cabecera generador">
-      <a href="index.html">Generador Web Semántico</a>
+      <a href="index.html" target="_self">Generador Web Semántico</a>
       <ul>
-        <li><a href="index.html" aria-current="page">Generador</a></li>
+        <li><a href="index.html" target="_self" aria-current="page">Generador</a></li>
       </ul>
     </nav>
   </header>
@@ -24,10 +24,8 @@
 
       <form>
         <p>
-          <label>
-            <span>Seleccionar documento XML:</span>
-            <input type="file" accept=".xml" required>
-          </label>
+          <label>Seleccionar documento XML:</label>
+          <input type="file" accept=".xml" required title="Seleccionar documento XML" aria-label="Seleccionar documento XML">
         </p>
         <p>
           <button type="button">Validar y Generar Sitio</button>
