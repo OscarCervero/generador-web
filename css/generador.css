@@ -18,7 +18,7 @@
 
 body {
   margin: 0;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  font-family: system-ui, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
   background-color: var(--color-fondo);
   color: var(--color-texto);
   line-height: 1.6;
@@ -28,6 +28,7 @@ body {
 /* Cabecera y Navegación */
 body > header {
   background-color: var(--color-superficie);
+  color: var(--color-texto);
   border-bottom: 0.08rem solid var(--color-borde);
   padding: 1rem 2rem;
 }
@@ -44,6 +45,7 @@ body > header > nav > a {
   font-size: 1.35rem;
   font-weight: 700;
   color: var(--color-texto);
+  background-color: transparent;
   text-decoration: none;
   letter-spacing: -0.03em;
 }
@@ -80,6 +82,7 @@ body > main {
 /* Secciones como tarjetas de interfaz */
 body > main > section {
   background-color: var(--color-superficie);
+  color: var(--color-texto);
   border: 0.08rem solid var(--color-borde);
   border-radius: 0.65rem;
   padding: 1.75rem;
@@ -90,6 +93,7 @@ body > main > section > h1,
 body > main > section > h2 {
   margin-top: 0;
   color: #38bdf8;
+  background-color: transparent;
   font-size: 1.4rem;
   border-bottom: 0.08rem solid var(--color-borde);
   padding-bottom: 0.75rem;
@@ -97,6 +101,7 @@ body > main > section > h2 {
 
 body > main > section > p {
   color: var(--color-texto-muted);
+  background-color: transparent;
 }
 
 /* Formulario de carga */
@@ -117,14 +122,15 @@ body > main > section form label {
   gap: 0.5rem;
   font-weight: 600;
   color: var(--color-texto);
+  background-color: transparent;
 }
 
 body > main > section form input[type="file"] {
   background-color: var(--color-fondo);
+  color: var(--color-texto-muted);
   border: 0.08rem dashed var(--color-borde);
   padding: 0.85rem;
   border-radius: 0.5rem;
-  color: var(--color-texto-muted);
   cursor: pointer;
   width: 100%;
 }
@@ -155,6 +161,7 @@ button {
 
 button:hover {
   background-color: var(--color-primario-hover);
+  color: #ffffff;
 }
 
 button:active {
@@ -164,6 +171,7 @@ button:active {
 /* Consola de logs */
 body > main > section[aria-live="polite"] article {
   background-color: var(--color-fondo);
+  color: var(--color-texto);
   border: 0.08rem solid var(--color-borde);
   border-radius: 0.45rem;
   padding: 1rem;
@@ -173,6 +181,7 @@ body > main > section[aria-live="polite"] h3 {
   margin: 0 0 0.5rem 0;
   font-size: 0.9rem;
   color: var(--color-texto-muted);
+  background-color: transparent;
   text-transform: uppercase;
   letter-spacing: 0.05em;
 }
@@ -182,8 +191,9 @@ body > main > section[aria-live="polite"] p {
   font-family: "Cascadia Code", Consolas, "Courier New", monospace;
   font-size: 0.88rem;
   white-space: pre-wrap;
-  word-break: break-word;
+  overflow-wrap: anywhere;
   color: #a7f3d0;
+  background-color: transparent;
 }
 
 /* Barra de selección de páginas generadas */
@@ -199,6 +209,7 @@ body > main > section:last-of-type > nav {
 /* Contenedor del visor de código */
 body > main > section:last-of-type article {
   background-color: var(--color-codigo-bg);
+  color: var(--color-texto);
   border: 0.08rem solid var(--color-borde);
   border-radius: 0.5rem;
   padding: 1.25rem;
@@ -220,6 +231,7 @@ code {
   font-family: "Cascadia Code", Consolas, "Courier New", monospace;
   font-size: 0.88rem;
   color: #e2e8f0;
+  background-color: transparent;
   display: block;
   min-width: 100%;
 }
@@ -230,5 +242,6 @@ body > footer {
   padding: 2rem 1.5rem;
   text-align: center;
   color: var(--color-texto-muted);
+  background-color: transparent;
   font-size: 0.85rem;
 }
