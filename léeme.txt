@@ -1,0 +1,12 @@
+Se ha realizado una pequeña interfaz para elegir el archivo xml y que te devuelva los 5 htmls generados.
+
+Se han realizado 2 pruebas, la primera con la información que tenía la página web del ejercicio 2, para que se vea que sale igual, la segunda con nuevos datos de una persona ficticia.
+
+Se reutiliza tanto el CSS como el JS de la actividad 2.
+He creado distintas carpetas con los sitios de prueba, donde he añadido las 5 páginas que se crearon con el generador.
+Estas carpetas con los sitios de prueba tienen el CSS, el JS, y las imágenes y media requeridos.
+
+Para cualquier cambio en el header o el footer solo habría que cambiar el layout.js.
+Todo el resto de cambios que tienen que ver con el HTML se cambian en el XML.
+
+En el visor HTML de la aplicación también se puede ver el código HTML generado así como visualizar la página WEB solo con el HTML sin el CSS, JS y elementos multimedia.

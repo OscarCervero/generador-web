@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Generador automático de sitios web personales mediante XML, TS, WebAssembly y JS.">
+  <title>Generador Web Semántico (TS + WASM + JS)</title>
+  <link rel="stylesheet" href="css/generador.css">
+</head>
+<body>
+  <header>
+    <nav aria-label="Cabecera generador">
+      <a href="index.html">Generador Web Semántico</a>
+      <ul>
+        <li><a href="index.html" aria-current="page">Generador</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section>
+      <h1>Generador de Sitios Web desde XML</h1>
+      <p>Selecciona un archivo XML (por ejemplo, <code>definicion/personal.xml</code> o <code>definicion/prueba.xml</code>) para validarlo con <strong>TypeScript</strong> contra el DTD y XSD, generar el HTML semántico con <strong>WebAssembly (Rust)</strong> y ensamblar los scripts finales con <strong>JavaScript</strong>.</p>
+
+      <form>
+        <p>
+          <label>
+            <span>Seleccionar documento XML:</span>
+            <input type="file" accept=".xml" required>
+          </label>
+        </p>
+        <p>
+          <button type="button">Validar y Generar Sitio</button>
+        </p>
+      </form>
+    </section>
+
+    <section aria-live="polite">
+      <h2>Registro de Ejecución del Sistema</h2>
+      <article>
+        <h3>Estado de las Tecnologías</h3>
+        <p>Esperando selección de archivo XML...</p>
+      </article>
+    </section>
+
+    <section hidden>
+      <h2>Páginas Generadas</h2>
+      <p>Selecciona una página para inspeccionar el código HTML semántico producido nativamente por WebAssembly:</p>
+      <nav aria-label="Páginas generadas"></nav>
+      <article>
+        <pre><code></code></pre>
+      </article>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Máster en Ingeniería Web - Universidad de Oviedo. Trabajo realizado conforme a estándares W3C.</p>
+  </footer>
+
+  <script type="module">
+    import initWasm, { generar_sitio_html } from './js/pkg/wasm_generator.js';
+    import { XMLValidator } from './js/validator.js';
+    import { WebSiteAssembler } from './js/assembler.js';
+
+    // Selección semántica estricta sin IDs ni clases
+    const form = document.querySelector('main > section form');
+    const inputXml = form.querySelector('input[type="file"]');
+    const btnGenerar = form.querySelector('button');
+
+    const seccionLog = document.querySelector('main > section[aria-live="polite"]');
+    const logParrafo = seccionLog.querySelector('article > p');
+
+    const seccionPrev = document.querySelector('main > section:last-of-type');
+    const navPaginas = seccionPrev.querySelector('nav');
+    const bloqueCodigo = seccionPrev.querySelector('pre > code');
+
+    function descargarArchivo(nombre, contenido) {
+      const blob = new Blob([contenido], { type: 'text/html;charset=utf-8' });
+      const enlace = document.createElement('a');
+      enlace.href = URL.createObjectURL(blob);
+      enlace.download = nombre;
+      enlace.click();
+      URL.revokeObjectURL(enlace.href);
+    }
+
+    btnGenerar.addEventListener('click', async () => {
+      const archivo = inputXml.files[0];
+      if (!archivo) {
+        logParrafo.textContent = 'Selecciona primero un archivo XML.';
+        return;
+      }
+
+      try {
+        logParrafo.textContent = '1. Leyendo contenido del archivo XML...';
+        const textoXml = await archivo.text();
+
+        // 1. Fase TypeScript
+        logParrafo.textContent = '2. Validando reglas DTD y restricciones XSD con TypeScript...';
+        const validador = new XMLValidator();
+        const datosValidados = validador.validarYParsear(textoXml);
+        logParrafo.textContent = '✔ TypeScript: XML válido frente a sitio.dtd y sitio.xsd.';
+
+        // 2. Fase WebAssembly (Rust)
+        logParrafo.textContent += '\n3. Inicializando WebAssembly y procesando estructuras...';
+        await initWasm();
+        const jsonStr = JSON.stringify(datosValidados);
+        const paginasJson = generar_sitio_html(jsonStr);
+        logParrafo.textContent += '\n✔ WebAssembly: Código HTML semántico generado sin div/class/id.';
+
+        // 3. Fase JavaScript
+        logParrafo.textContent += '\n4. Ensamblando rutas y scripts interactivos con JavaScript...';
+        const assembler = new WebSiteAssembler();
+        const sitioEnsamblado = assembler.ensamblarSitio(paginasJson, datosValidados.metadatos);
+        logParrafo.textContent += '\n✔ JavaScript: Ensamblado completado con éxito.';
+
+        // Mostrar panel de resultados eliminando el atributo 'hidden'
+        seccionPrev.removeAttribute('hidden');
+        navPaginas.innerHTML = '';
+
+        const mapaPaginas = {
+          'index_html': { titulo: 'Inicio (index.html)', archivo: 'index.html' },
+          'sobre_mi_html': { titulo: 'Sobre mí (sobre-mi.html)', archivo: 'sobre-mi.html' },
+          'proyectos_html': { titulo: 'Proyectos (proyectos.html)', archivo: 'proyectos.html' },
+          'aficiones_html': { titulo: 'Aficiones (aficiones.html)', archivo: 'aficiones.html' },
+          'contacto_html': { titulo: 'Contacto (contacto.html)', archivo: 'contacto.html' }
+        };
+
+        // Generar botones de cambio de vista
+        for (const [clave, item] of Object.entries(mapaPaginas)) {
+          const btn = document.createElement('button');
+          btn.type = 'button';
+          btn.textContent = item.titulo;
+
+          btn.addEventListener('click', () => {
+            bloqueCodigo.textContent = sitioEnsamblado[clave];
+          });
+
+          navPaginas.appendChild(btn);
+        }
+
+        // Botón especial: Descargar los 5 HTML
+        const btnDescargarTodos = document.createElement('button');
+        btnDescargarTodos.type = 'button';
+        btnDescargarTodos.textContent = 'Descargar los 5 HTML';
+        btnDescargarTodos.style.backgroundColor = '#059669';
+        btnDescargarTodos.addEventListener('click', () => {
+          for (const [clave, item] of Object.entries(mapaPaginas)) {
+            descargarArchivo(item.archivo, sitioEnsamblado[clave]);
+          }
+        });
+        navPaginas.appendChild(btnDescargarTodos);
+
+        // Botón especial: Abrir Web en pestaña nueva
+        const btnAbrirPestana = document.createElement('button');
+        btnAbrirPestana.type = 'button';
+        btnAbrirPestana.textContent = 'Abrir Web en pestaña nueva';
+        btnAbrirPestana.style.backgroundColor = '#7c3aed';
+        btnAbrirPestana.addEventListener('click', () => {
+          const blob = new Blob([sitioEnsamblado['index_html']], { type: 'text/html;charset=utf-8' });
+          const urlBlob = URL.createObjectURL(blob);
+          window.open(urlBlob, '_blank');
+        });
+        navPaginas.appendChild(btnAbrirPestana);
+
+        // Mostrar por defecto index.html
+        bloqueCodigo.textContent = sitioEnsamblado['index_html'];
+
+      } catch (err) {
+        logParrafo.textContent = `Error durante la ejecución: ${err.message}`;
+      }
+    });
+  </script>
+</body>
+</html>

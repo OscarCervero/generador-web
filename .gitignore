@@ -1,0 +1,4 @@
+node_modules/
+wasm/target/
+.DS_Store
+Thumbs.db

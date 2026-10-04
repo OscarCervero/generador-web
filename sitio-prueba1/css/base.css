@@ -1,0 +1,179 @@
+/* ==========================================================================
+   VARIABLES GLOBALES Y RESET
+   ========================================================================== */
+:root {
+  --color-fondo: #f1f5f9;
+  --color-superficie: #ffffff;
+  --color-texto: #0f172a;
+  --color-texto-suave: #475569;
+  --color-primario: #0369a1;
+  --color-primario-hover: #075985;
+  --color-primario-fondo: #e0f2fe;
+  --color-borde: #cbd5e1;
+  
+  --fuente-sistema: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --ancho-maximo: 68rem;     
+  --radio-borde: 0.75rem;    
+  --sombra-tarjeta: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.05);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--fuente-sistema);
+  color: var(--color-texto);
+  background-color: var(--color-fondo);
+  line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ==========================================================================
+   CABECERA Y NAVEGACIÓN GLOBAL
+   ========================================================================== */
+body > header {
+  color: inherit;
+  background-color: var(--color-superficie);
+  border-bottom: 0.0625rem solid var(--color-borde);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.03);
+}
+
+body > header > nav {
+  max-width: var(--ancho-maximo);
+  margin-inline: auto;
+  padding: 0.85rem 1.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+body > header > nav > a:first-of-type {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--color-primario);
+  background-color: transparent;
+  text-decoration: none;
+  letter-spacing: -0.02rem;
+}
+
+body > header ul {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+body > header ul a {
+  text-decoration: none;
+  color: var(--color-texto);
+  background-color: transparent;
+  font-weight: 600;
+  font-size: 0.95rem;
+  padding: 0.45rem 0.85rem;
+  border-radius: calc(var(--radio-borde) * 0.5);
+  transition: all 0.2s ease;
+}
+
+body > header ul a:hover {
+  background-color: var(--color-primario-fondo);
+  color: var(--color-primario);
+}
+
+body > header ul a[aria-current="page"] {
+  background-color: var(--color-primario);
+  color: #ffffff;
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+  outline: 0.15rem solid var(--color-primario);
+  outline-offset: 0.125rem;
+}
+
+/* ==========================================================================
+   CONTENEDOR MAIN Y ELEMENTOS GENERALES
+   ========================================================================== */
+main {
+  max-width: var(--ancho-maximo);
+  width: 100%;
+  margin-inline: auto;
+  padding: 2rem 1.5rem;
+  flex: 1;
+}
+
+main > h1 {
+  font-size: 2.15rem;
+  font-weight: 800;
+  color: var(--color-texto);
+  background-color: transparent;
+  margin-bottom: 1.5rem;
+  letter-spacing: -0.03rem;
+}
+
+main > section,
+main > article {
+  color: inherit;
+  background-color: var(--color-superficie);
+  border: 0.0625rem solid var(--color-borde);
+  border-radius: var(--radio-borde);
+  padding: 1.75rem;
+  margin-bottom: 1.75rem;
+  box-shadow: var(--sombra-tarjeta);
+}
+
+h2 {
+  font-size: 1.35rem;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+  color: var(--color-texto);
+  background-color: transparent;
+}
+
+h3 {
+  font-size: 1.05rem;
+  font-weight: 600;
+  margin-bottom: 0.35rem;
+}
+
+p {
+  margin-bottom: 0.85rem;
+}
+
+main a {
+  color: var(--color-primario);
+  background-color: transparent;
+  text-decoration: underline;
+  text-underline-offset: 0.15rem;
+}
+
+main a:hover {
+  color: var(--color-primario-hover);
+  background-color: transparent;
+}
+
+/* ==========================================================================
+   FOOTER
+   ========================================================================== */
+footer {
+  background-color: var(--color-superficie);
+  border-top: 0.0625rem solid var(--color-borde);
+  text-align: center;
+  padding: 1.75rem 1.5rem;
+  font-size: 0.875rem;
+  color: var(--color-texto-suave);
+  margin-top: auto;
+}
