@@ -1,0 +1,80 @@
+<!ELEMENT sitioWeb (metadatos, paginas)>
+<!ATTLIST sitioWeb
+    lang CDATA #REQUIRED>
+
+<!ELEMENT metadatos (autor, marca, email, anio)>
+<!ELEMENT autor (#PCDATA)>
+<!ELEMENT marca (#PCDATA)>
+<!ELEMENT email (#PCDATA)>
+<!ELEMENT anio (#PCDATA)>
+
+<!ELEMENT paginas (inicio, sobreMi, proyectos, aficiones, contacto)>
+
+<!-- PÁGINA: INICIO -->
+<!ELEMENT inicio (tituloPagina, descripcionMeta, perfil, resumen)>
+<!ELEMENT tituloPagina (#PCDATA)>
+<!ELEMENT descripcionMeta (#PCDATA)>
+
+<!ELEMENT perfil (nombre, foto, rol, bienvenida, emailContacto)>
+<!ELEMENT nombre (#PCDATA)>
+<!ELEMENT foto EMPTY>
+<!ATTLIST foto
+    ruta CDATA #REQUIRED
+    descripcion CDATA #REQUIRED>
+<!ELEMENT rol (#PCDATA)>
+<!ELEMENT bienvenida (#PCDATA)>
+<!ELEMENT emailContacto (#PCDATA)>
+
+<!ELEMENT resumen (tituloSeccion, parrafo)>
+<!ELEMENT tituloSeccion (#PCDATA)>
+<!ELEMENT parrafo (#PCDATA)>
+
+<!-- PÁGINA: SOBRE MÍ -->
+<!ELEMENT sobreMi (tituloPagina, descripcionMeta, encabezadoTrayectoria, bio, bloqueLista+)>
+<!ELEMENT encabezadoTrayectoria (#PCDATA)>
+<!ELEMENT bio (#PCDATA)>
+<!ELEMENT bloqueLista (tituloSeccion, item+)>
+<!ELEMENT item (#PCDATA)>
+
+<!-- PÁGINA: PROYECTOS -->
+<!ELEMENT proyectos (tituloPagina, descripcionMeta, tituloGeneral, proyectoDestacado, otrosProyectos)>
+<!ELEMENT tituloGeneral (#PCDATA)>
+<!ELEMENT proyectoDestacado (tituloSeccion, descripcion, video)>
+<!ELEMENT descripcion (#PCDATA)>
+<!ELEMENT video EMPTY>
+<!ATTLIST video
+    ruta CDATA #REQUIRED
+    tipo CDATA #REQUIRED>
+
+<!ELEMENT otrosProyectos (tituloSeccion, proyectoItem+)>
+<!ELEMENT proyectoItem (tituloArticulo, descripcion, enlace)>
+<!ELEMENT tituloArticulo (#PCDATA)>
+<!ELEMENT enlace (#PCDATA)>
+<!ATTLIST enlace
+    url CDATA #REQUIRED>
+
+<!-- PÁGINA: AFICIONES -->
+<!ELEMENT aficiones (tituloPagina, descripcionMeta, tituloGeneral, seccionAudio, seccionColeccion+)>
+<!ELEMENT seccionAudio (tituloSeccion, descripcion, audio)>
+<!ELEMENT audio EMPTY>
+<!ATTLIST audio
+    ruta CDATA #REQUIRED
+    tipo CDATA #REQUIRED>
+
+<!ELEMENT seccionColeccion (tituloSeccion, ariaNav, descripcion, tarjeta+)>
+<!ATTLIST seccionColeccion
+    tipoColeccion (musica|cine) #REQUIRED>
+<!ELEMENT ariaNav (#PCDATA)>
+<!ELEMENT tarjeta (imagen, tituloArticulo, subtitulo)>
+<!ELEMENT imagen EMPTY>
+<!ATTLIST imagen
+    ruta CDATA #REQUIRED
+    descripcion CDATA #REQUIRED>
+<!ELEMENT subtitulo (#PCDATA)>
+
+<!-- PÁGINA: CONTACTO -->
+<!ELEMENT contacto (tituloPagina, descripcionMeta, tituloSeccion, descripcion, formulario)>
+<!ELEMENT formulario (accionMail, etiquetaMensaje, textoBoton)>
+<!ELEMENT accionMail (#PCDATA)>
+<!ELEMENT etiquetaMensaje (#PCDATA)>
+<!ELEMENT textoBoton (#PCDATA)>

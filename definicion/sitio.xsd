@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+
+  <!-- Restricciones comunes -->
+  <xs:simpleType name="tipoEmail">
+    <xs:restriction base="xs:string">
+      <xs:pattern value="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="tipoAnio">
+    <xs:restriction base="xs:gYear"/>
+  </xs:simpleType>
+
+  <xs:complexType name="tipoRecursoMedia">
+    <xs:attribute name="ruta" type="xs:string" use="required"/>
+    <xs:attribute name="tipo" type="xs:string" use="required"/>
+  </xs:complexType>
+
+  <xs:complexType name="tipoImagen">
+    <xs:attribute name="ruta" type="xs:string" use="required"/>
+    <xs:attribute name="descripcion" type="xs:string" use="required"/>
+  </xs:complexType>
+
+  <!-- Elemento Raíz -->
+  <xs:element name="sitioWeb">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="metadatos">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="autor" type="xs:string"/>
+              <xs:element name="marca" type="xs:string"/>
+              <xs:element name="email" type="tipoEmail"/>
+              <xs:element name="anio" type="tipoAnio"/>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+
+        <xs:element name="paginas">
+          <xs:complexType>
+            <xs:sequence>
+              <!-- Inicio -->
+              <xs:element name="inicio">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="tituloPagina" type="xs:string"/>
+                    <xs:element name="descripcionMeta" type="xs:string"/>
+                    <xs:element name="perfil">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="nombre" type="xs:string"/>
+                          <xs:element name="foto" type="tipoImagen"/>
+                          <xs:element name="rol" type="xs:string"/>
+                          <xs:element name="bienvenida" type="xs:string"/>
+                          <xs:element name="emailContacto" type="tipoEmail"/>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="resumen">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="tituloSeccion" type="xs:string"/>
+                          <xs:element name="parrafo" type="xs:string"/>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+
+              <!-- Sobre Mí -->
+              <xs:element name="sobreMi">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="tituloPagina" type="xs:string"/>
+                    <xs:element name="descripcionMeta" type="xs:string"/>
+                    <xs:element name="encabezadoTrayectoria" type="xs:string"/>
+                    <xs:element name="bio" type="xs:string"/>
+                    <xs:element name="bloqueLista" maxOccurs="unbounded">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="tituloSeccion" type="xs:string"/>
+                          <xs:element name="item" type="xs:string" maxOccurs="unbounded"/>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+
+              <!-- Proyectos -->
+              <xs:element name="proyectos">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="tituloPagina" type="xs:string"/>
+                    <xs:element name="descripcionMeta" type="xs:string"/>
+                    <xs:element name="tituloGeneral" type="xs:string"/>
+                    <xs:element name="proyectoDestacado">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="tituloSeccion" type="xs:string"/>
+                          <xs:element name="descripcion" type="xs:string"/>
+                          <xs:element name="video" type="tipoRecursoMedia"/>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="otrosProyectos">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="tituloSeccion" type="xs:string"/>
+                          <xs:element name="proyectoItem" maxOccurs="unbounded">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="tituloArticulo" type="xs:string"/>
+                                <xs:element name="descripcion" type="xs:string"/>
+                                <xs:element name="enlace">
+                                  <xs:complexType>
+                                    <xs:simpleContent>
+                                      <xs:extension base="xs:string">
+                                        <xs:attribute name="url" type="xs:anyURI" use="required"/>
+                                      </xs:extension>
+                                    </xs:simpleContent>
+                                  </xs:complexType>
+                                </xs:element>
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+
+              <!-- Aficiones -->
+              <xs:element name="aficiones">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="tituloPagina" type="xs:string"/>
+                    <xs:element name="descripcionMeta" type="xs:string"/>
+                    <xs:element name="tituloGeneral" type="xs:string"/>
+                    <xs:element name="seccionAudio">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="tituloSeccion" type="xs:string"/>
+                          <xs:element name="descripcion" type="xs:string"/>
+                          <xs:element name="audio" type="tipoRecursoMedia"/>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="seccionColeccion" maxOccurs="unbounded">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="tituloSeccion" type="xs:string"/>
+                          <xs:element name="ariaNav" type="xs:string"/>
+                          <xs:element name="descripcion" type="xs:string"/>
+                          <xs:element name="tarjeta" maxOccurs="unbounded">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="imagen" type="tipoImagen"/>
+                                <xs:element name="tituloArticulo" type="xs:string"/>
+                                <xs:element name="subtitulo" type="xs:string"/>
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                        <xs:attribute name="tipoColeccion" use="required">
+                          <xs:simpleType>
+                            <xs:restriction base="xs:string">
+                              <xs:enumeration value="musica"/>
+                              <xs:enumeration value="cine"/>
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:attribute>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+
+              <!-- Contacto -->
+              <xs:element name="contacto">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="tituloPagina" type="xs:string"/>
+                    <xs:element name="descripcionMeta" type="xs:string"/>
+                    <xs:element name="tituloSeccion" type="xs:string"/>
+                    <xs:element name="descripcion" type="xs:string"/>
+                    <xs:element name="formulario">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="accionMail" type="tipoEmail"/>
+                          <xs:element name="etiquetaMensaje" type="xs:string"/>
+                          <xs:element name="textoBoton" type="xs:string"/>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+      <xs:attribute name="lang" type="xs:language" use="required"/>
+    </xs:complexType>
+  </xs:element>
+
+</xs:schema>

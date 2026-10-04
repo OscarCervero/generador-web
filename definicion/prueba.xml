@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sitioWeb SYSTEM "sitio.dtd">
+<sitioWeb lang="es"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:noNamespaceSchemaLocation="sitio.xsd">
+
+  <metadatos>
+    <autor>Lucía Álvarez Fernández</autor>
+    <marca>L. Álvarez</marca>
+    <email>lucia.alvarez@ejemplo.com</email>
+    <anio>2026</anio>
+  </metadatos>
+
+  <paginas>
+    <inicio>
+      <tituloPagina>Inicio | Lucía Álvarez</tituloPagina>
+      <descripcionMeta>Portafolio profesional de desarrollo web y arquitectura cloud.</descripcionMeta>
+      <perfil>
+        <nombre>Lucía Álvarez Fernández</nombre>
+        <foto ruta="img/cara.jpg" descripcion="Fotografía de retrato de Lucía Álvarez"/>
+        <rol>Ingeniera de Software y Especialista Cloud</rol>
+        <bienvenida>Bienvenido a mi espacio personal sobre tecnología, desarrollo backend y arquitectura de sistemas distribuidos.</bienvenida>
+        <emailContacto>lucia.alvarez@ejemplo.com</emailContacto>
+      </perfil>
+      <resumen>
+        <tituloSeccion>Sobre este sitio</tituloSeccion>
+        <parrafo>Aquí puedes consultar un compendio de mis proyectos en código abierto, trayectoria formativa y aficiones de divulgación tecnológica.</parrafo>
+      </resumen>
+    </inicio>
+
+    <sobreMi>
+      <tituloPagina>Sobre mí | Lucía Álvarez</tituloPagina>
+      <descripcionMeta>Biografía y trayectoria profesional en desarrollo web.</descripcionMeta>
+      <encabezadoTrayectoria>Experiencia y Educación</encabezadoTrayectoria>
+      <bio>Ingeniera de software enfocada en crear infraestructuras escalables y accesibles.</bio>
+
+      <bloqueLista>
+        <tituloSeccion>Formación</tituloSeccion>
+        <item>Máster en Ingeniería Web por la Universidad de Oviedo (1980)</item>
+        <item>Grado en Ingeniería Informática (1975 - 1980)</item>
+      </bloqueLista>
+
+      <bloqueLista>
+        <tituloSeccion>Competencias Clave</tituloSeccion>
+        <item>Desarrollo en Rust, TypeScript, Python y Go</item>
+        <item>Arquitectura de microservicios y despliegues con Docker y Kubernetes</item>
+        <item>Accesibilidad web WCAG y estándares W3C</item>
+      </bloqueLista>
+    </sobreMi>
+
+    <proyectos>
+      <tituloPagina>Proyectos | Lucía Álvarez</tituloPagina>
+      <descripcionMeta>Trabajos destacados en sistemas web.</descripcionMeta>
+      <tituloGeneral>Catálogo de Proyectos</tituloGeneral>
+      <proyectoDestacado>
+        <tituloSeccion>Tutoriales de Python</tituloSeccion>
+        <descripcion>Introducción a los tutoriales de Python que ha hecho mi nieto en sus ratos libres</descripcion>
+        <video ruta="media/python.mp4" tipo="video/mp4"/>
+      </proyectoDestacado>
+      <otrosProyectos>
+        <tituloSeccion>Iniciativas Open Source</tituloSeccion>
+        <proyectoItem>
+          <tituloArticulo>Parser XML Ligero</tituloArticulo>
+          <descripcion>Librería ligera para validación de esquemas XML en el cliente.</descripcion>
+          <enlace url="https://github.com/ejemplo/xml-parser">Ver código en GitHub</enlace>
+        </proyectoItem>
+        <proyectoItem>
+          <tituloArticulo>API REST de Monitoreo</tituloArticulo>
+          <descripcion>Servicio de métricas distribuido enfocado en rendimiento.</descripcion>
+          <enlace url="https://github.com/ejemplo/monitor-api">Ver repositorio</enlace>
+        </proyectoItem>
+      </otrosProyectos>
+    </proyectos>
+
+    <aficiones>
+      <tituloPagina>Aficiones | Lucía Álvarez</tituloPagina>
+      <descripcionMeta>Intereses de divulgación y cultura.</descripcionMeta>
+      <tituloGeneral>Espacio Personal</tituloGeneral>
+      <seccionAudio>
+        <tituloSeccion>Episodio de Divulgación Destacado</tituloSeccion>
+        <descripcion>Reflexión sonora sobre la física y el tiempo. Realizado por Jordi Wild con Javi Santaolalla.</descripcion>
+        <audio ruta="media/fisica.mp3" tipo="audio/mpeg"/>
+      </seccionAudio>
+
+      <seccionColeccion tipoColeccion="musica">
+        <tituloSeccion>Discos Imprescindibles</tituloSeccion>
+        <ariaNav>Navegación carrusel música</ariaNav>
+        <descripcion>Obras de ambient y rock progresivo habituales en mis sesiones de trabajo:</descripcion>
+        <tarjeta>
+          <imagen ruta="img/king.jpg" descripcion="In the Court of the Crimson King"/>
+          <tituloArticulo>In the Court of the Crimson King</tituloArticulo>
+          <subtitulo>King Crimson</subtitulo>
+        </tarjeta>
+        <tarjeta>
+          <imagen ruta="img/ramones.jpg" descripcion="Rocket to Russia"/>
+          <tituloArticulo>Rocket to Russia</tituloArticulo>
+          <subtitulo>Ramones</subtitulo>
+        </tarjeta>
+        <tarjeta>
+          <imagen ruta="img/elvis.jpg" descripcion="Elvis Presley"/>
+          <tituloArticulo>Elvis Presley</tituloArticulo>
+          <subtitulo>Elvis Presley</subtitulo>
+        </tarjeta>
+        <tarjeta>
+          <imagen ruta="img/nirvana.jpg" descripcion="Nevermind"/>
+          <tituloArticulo>Nevermind</tituloArticulo>
+          <subtitulo>Nirvana</subtitulo>
+        </tarjeta>
+        <tarjeta>
+          <imagen ruta="img/iron.jpg" descripcion="Number Of The Beast"/>
+          <tituloArticulo>Number Of The Beast</tituloArticulo>
+          <subtitulo>Iron Maiden</subtitulo>
+        </tarjeta>
+        <tarjeta>
+          <imagen ruta="img/acdc.jpg" descripcion="Highway To Hell"/>
+          <tituloArticulo>Highway To Hell</tituloArticulo>
+          <subtitulo>ACDC</subtitulo>
+        </tarjeta>
+      </seccionColeccion>
+
+      <seccionColeccion tipoColeccion="cine">
+        <tituloSeccion>Filmografía de Referencia</tituloSeccion>
+        <ariaNav>Navegación carrusel cine</ariaNav>
+        <descripcion>Películas clásicas con guiones de gran carga dramática:</descripcion>
+        <tarjeta>
+          <imagen ruta="img/angrymen.jpg" descripcion="12 Angry Men"/>
+          <tituloArticulo>12 Angry Men</tituloArticulo>
+          <subtitulo>Sidney Lumet</subtitulo>
+        </tarjeta>
+        <tarjeta>
+          <imagen ruta="img/porco.jpg" descripcion="Porco Rosso"/>
+          <tituloArticulo>Porco Rosso</tituloArticulo>
+          <subtitulo>Hayao Miyazaki</subtitulo>
+        </tarjeta>
+        <tarjeta>
+          <imagen ruta="img/ocho.jpg" descripcion="Los Odiosos Ocho"/>
+          <tituloArticulo>Los Odiosos Ocho</tituloArticulo>
+          <subtitulo>Quentin Tarantino</subtitulo>
+        </tarjeta>
+        <tarjeta>
+          <imagen ruta="img/bastardos.jpg" descripcion="Malditos Bastardos"/>
+          <tituloArticulo>Malditos Bastardos</tituloArticulo>
+          <subtitulo>Quentin Tarantino</subtitulo>
+        </tarjeta>
+        <tarjeta>
+          <imagen ruta="img/titanic.jpg" descripcion="Titanic"/>
+          <tituloArticulo>Titanic</tituloArticulo>
+          <subtitulo>James Cameron</subtitulo>
+        </tarjeta>
+        <tarjeta>
+          <imagen ruta="img/casablanca.jpg" descripcion="Casablanca"/>
+          <tituloArticulo>Casablanca</tituloArticulo>
+          <subtitulo>Michael Curtiz</subtitulo>
+        </tarjeta>
+      </seccionColeccion>
+    </aficiones>
+
+    <contacto>
+      <tituloPagina>Contacto | Lucía Álvarez</tituloPagina>
+      <descripcionMeta>Canal directo para colaboraciones o consultas técnicas.</descripcionMeta>
+      <tituloSeccion>Enviar Consulta</tituloSeccion>
+      <descripcion>Puedes escribirme si te interesa colaborar en proyectos de arquitectura web o consultoría:</descripcion>
+      <formulario>
+        <accionMail>lucia.alvarez@ejemplo.com</accionMail>
+        <etiquetaMensaje>Descripción de la propuesta:</etiquetaMensaje>
+        <textoBoton>Enviar Correo</textoBoton>
+      </formulario>
+    </contacto>
+  </paginas>
+</sitioWeb>

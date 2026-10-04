@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sitioWeb SYSTEM "sitio.dtd">
+<sitioWeb lang="es"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:noNamespaceSchemaLocation="sitio.xsd">
+
+  <!-- Metadatos globales utilizados para branding, cabecera y pie de página -->
+  <metadatos>
+    <autor>Óscar Cervero Luiña</autor>
+    <marca>Cervero</marca>
+    <email>uo295432@uniovi.es</email>
+    <anio>2026</anio>
+  </metadatos>
+
+  <paginas>
+
+    <!-- ====================================================================
+         1. PÁGINA: INICIO (index.html)
+         ==================================================================== -->
+    <inicio>
+      <tituloPagina>Inicio | Mi Sitio Web</tituloPagina>
+      <descripcionMeta>Sitio web personal y portafolio profesional de Óscar Cervero Luiña.</descripcionMeta>
+      <perfil>
+        <nombre>Óscar Cervero Luiña</nombre>
+        <!-- Nota: el texto de la descripción incluye "retrato" para satisfacer
+             el selector CSS: main > section:has(> img[alt*="retrato"]) -->
+        <foto ruta="img/cara.jpg" descripcion="Fotografía de retrato de Óscar Cervero Luiña"/>
+        <rol>Estudiante del Máster en Ingeniería Web por la Universidad de Oviedo</rol>
+        <bienvenida>Bienvenido a mi sitio web personal. Aquí encontrarás detalles sobre mi formación académica, proyectos que he realizado a lo largo del tiempo, así como detalles para conocerme un poco mejor.</bienvenida>
+        <emailContacto>uo295432@uniovi.es</emailContacto>
+      </perfil>
+      <resumen>
+        <tituloSeccion>Lo que vas a encontrar aquí</tituloSeccion>
+        <parrafo>En esta página web podrás conocerme un poco mejor. Encontrarás mis aficiones e intereses, sobre todo de música y cine, así como mi información académica y profesional, como distintos proyectos que he desarrollado. Por último también podrás contactarme y escribirme correos si así lo deseas.</parrafo>
+      </resumen>
+    </inicio>
+
+    <!-- ====================================================================
+         2. PÁGINA: SOBRE MÍ (sobre-mi.html)
+         ==================================================================== -->
+    <sobreMi>
+      <tituloPagina>Sobre mí | Mi Sitio Web</tituloPagina>
+      <descripcionMeta>Información biográfica, formación y competencias.</descripcionMeta>
+      <encabezadoTrayectoria>Trayectoria y Competencias</encabezadoTrayectoria>
+      <bio>Soy un estudiante de la Universidad de Oviedo, interesado sobre todo en el desarrollo Web y en temas relacionados con la ciberseguridad.</bio>
+
+      <bloqueLista>
+        <tituloSeccion>Formación Académica</tituloSeccion>
+        <item>Máster en Ingeniería Web por la Universidad de Oviedo (2026 - Presente)</item>
+        <item>Grado en Ingeniería Informática del Software por la Universidad de Oviedo (2022 - Presente)</item>
+        <item>Bachillerato Tecnológico en el IES Galileo Galilei(2020 - 2022)</item>
+      </bloqueLista>
+
+      <bloqueLista>
+        <tituloSeccion>Experiencia Profesional</tituloSeccion>
+        <item>Becario en Babel en el proyecto de Mantenimiento Web de Alsa (Febrero de 2026 - Junio de 2026)</item>
+      </bloqueLista>
+
+      <bloqueLista>
+        <tituloSeccion>Habilidades Técnicas</tituloSeccion>
+        <item>Experiencia profesional en Liferay, Java y Angular</item>
+        <item>Experiencia con HTML, CSS, JS, PHP, C, C++, C# y Python</item>
+        <item>Uso de herramientas como GIT y Fork</item>
+      </bloqueLista>
+
+      <bloqueLista>
+        <tituloSeccion>Puntos destacables</tituloSeccion>
+        <item>B1 de inglés por la Escuela Oficial de Idiomas</item>
+        <item>Carné de conducir tipo B</item>
+        <item>Matrícula de Honor en la asignatura de Prácticas de Empresa del Grado de Ingeniería Informática del Software</item>
+      </bloqueLista>
+    </sobreMi>
+
+    <!-- ====================================================================
+         3. PÁGINA: PROYECTOS (proyectos.html)
+         ==================================================================== -->
+    <proyectos>
+      <tituloPagina>Proyectos | Mi Sitio Web</tituloPagina>
+      <descripcionMeta>Proyectos destacados de desarrollo y demostración en vídeo.</descripcionMeta>
+      <tituloGeneral>Proyectos Realizados</tituloGeneral>
+
+      <proyectoDestacado>
+        <tituloSeccion>Péndulo de Ondas</tituloSeccion>
+        <descripcion>Este es un proyecto que realicé cuando tenía más o menos 15 años para la feria de la ciencia del IES Galileo Galilei de Navia. Es un vídeo al cual le tengo mucho cariño ya que a día de hoy sigue siendo el vídeo con más visitas de la feria de la ciencia de Navia.</descripcion>
+        <video ruta="media/ondas.mp4" tipo="video/mp4"/>
+      </proyectoDestacado>
+
+      <otrosProyectos>
+        <tituloSeccion>Otros Proyectos</tituloSeccion>
+        <proyectoItem>
+          <tituloArticulo>Readme.md para página personal de GitHub</tituloArticulo>
+          <descripcion>Diseño simple para dar la bienvenida a mi GitHub personal.</descripcion>
+          <enlace url="https://github.com/OscarCervero/OscarCervero">Ver repositorio de OscarCervero</enlace>
+        </proyectoItem>
+        <proyectoItem>
+          <tituloArticulo>wichat_es5a</tituloArticulo>
+          <descripcion>Proyecto realizado en la asignatura de Arquitectura del Software del Grado, en el cual se establece un juego de trivia con distintos retos y características.</descripcion>
+          <enlace url="https://github.com/OscarCervero/wichat_es5a">Ver repositorio de wichat_es5a</enlace>
+        </proyectoItem>
+      </otrosProyectos>
+    </proyectos>
+
+    <!-- ====================================================================
+         4. PÁGINA: AFICIONES (aficiones.html)
+         ==================================================================== -->
+    <aficiones>
+      <tituloPagina>Aficiones | Mi Sitio Web</tituloPagina>
+      <descripcionMeta>Aficiones, música, tecnología y podcast recomendado.</descripcionMeta>
+      <tituloGeneral>Aficiones e Intereses</tituloGeneral>
+
+      <seccionAudio>
+        <tituloSeccion>Mi podcast favorito: The Wild Project con Arturo Pérez Reverte</tituloSeccion>
+        <descripcion>Este podcast me parece la mar de interesante ya que se tratan temas políticos y sociales que están de actualidad. Todo de la mano del gran Arturo Pérez Reverte, excorresponsal de guerra y escritor.</descripcion>
+        <audio ruta="media/perezreverte.mp3" tipo="audio/mpeg"/>
+      </seccionAudio>
+
+      <!-- Colección 1: Música -->
+      <seccionColeccion tipoColeccion="musica">
+        <tituloSeccion>Álbumes Favoritos</tituloSeccion>
+        <ariaNav>Navegación carrusel música</ariaNav>
+        <descripcion>Una selección de mis álbumes de música favoritos, donde se aprecia mi gusto por el rock, punk y flamenco:</descripcion>
+        <tarjeta>
+          <imagen ruta="img/finale.jpg" descripcion="Portada Visión de futuro de Finale"/>
+          <tituloArticulo>Visión de futuro</tituloArticulo>
+          <subtitulo>Finale</subtitulo>
+        </tarjeta>
+        <tarjeta>
+          <imagen ruta="img/eskorbuto.jpg" descripcion="Portada Demasiados enemigos de Eskorbuto"/>
+          <tituloArticulo>Demasiados enemigos</tituloArticulo>
+          <subtitulo>Eskorbuto</subtitulo>
+        </tarjeta>
+        <tarjeta>
+          <imagen ruta="img/chuck.jpg" descripcion="Portada St. Louis to Liverpool"/>
+          <tituloArticulo>St. Louis to Liverpool</tituloArticulo>
+          <subtitulo>Chuck Berry</subtitulo>
+        </tarjeta>
+        <tarjeta>
+          <imagen ruta="img/navajita.jpg" descripcion="Portada Desde mi Azotea"/>
+          <tituloArticulo>Desde mi Azotea</tituloArticulo>
+          <subtitulo>Navajita Plateá</subtitulo>
+        </tarjeta>
+        <tarjeta>
+          <imagen ruta="img/king.jpg" descripcion="Portada In the Court of the Crimson King"/>
+          <tituloArticulo>In the Court of the Crimson King</tituloArticulo>
+          <subtitulo>King Crimson</subtitulo>
+        </tarjeta>
+        <tarjeta>
+          <imagen ruta="img/ramones.jpg" descripcion="Portada Rocket to Russia"/>
+          <tituloArticulo>Rocket to Russia</tituloArticulo>
+          <subtitulo>Ramones</subtitulo>
+        </tarjeta>
+      </seccionColeccion>
+
+      <!-- Colección 2: Cine -->
+      <seccionColeccion tipoColeccion="cine">
+        <tituloSeccion>Películas Favoritas</tituloSeccion>
+        <ariaNav>Navegación carrusel cine</ariaNav>
+        <descripcion>Películas que me han marcado o que simplemente disfruto de ver de vez en cuando:</descripcion>
+        <tarjeta>
+          <imagen ruta="img/angrymen.jpg" descripcion="Póster 12 Angry Men"/>
+          <tituloArticulo>12 Angry Men</tituloArticulo>
+          <subtitulo>Sidney Lumet</subtitulo>
+        </tarjeta>
+        <tarjeta>
+          <imagen ruta="img/haine.jpg" descripcion="Póster La haine"/>
+          <tituloArticulo>La haine</tituloArticulo>
+          <subtitulo>Mathieu Kassovitz</subtitulo>
+        </tarjeta>
+        <tarjeta>
+          <imagen ruta="img/dogs.jpg" descripcion="Póster de Reservoir Dogs"/>
+          <tituloArticulo>Reservoir Dogs</tituloArticulo>
+          <subtitulo>Quentin Tarantino</subtitulo>
+        </tarjeta>
+        <tarjeta>
+          <imagen ruta="img/pulp.jpg" descripcion="Póster de Pulp Fiction"/>
+          <tituloArticulo>Pulp Fiction</tituloArticulo>
+          <subtitulo>Quentin Tarantino</subtitulo>
+        </tarjeta>
+        <tarjeta>
+          <imagen ruta="img/porco.jpg" descripcion="Póster de Porco Rosso"/>
+          <tituloArticulo>Porco Rosso</tituloArticulo>
+          <subtitulo>Hayao Miyazaki</subtitulo>
+        </tarjeta>
+        <tarjeta>
+          <imagen ruta="img/green.jpg" descripcion="Póster de Green Book"/>
+          <tituloArticulo>Green Book</tituloArticulo>
+          <subtitulo>Peter Farrelly</subtitulo>
+        </tarjeta>
+      </seccionColeccion>
+    </aficiones>
+
+    <!-- ====================================================================
+         5. PÁGINA: CONTACTO (contacto.html)
+         ==================================================================== -->
+    <contacto>
+      <tituloPagina>Contacto | Mi Sitio Web</tituloPagina>
+      <descripcionMeta>Formulario de contacto y canales de comunicación.</descripcionMeta>
+      <tituloSeccion>Formulario de Contacto</tituloSeccion>
+      <descripcion>Si deseas colaborar en algún proyecto o ponerte en contacto conmigo, escribeme un mensaje a mi correo electrónico:</descripcion>
+      <formulario>
+        <accionMail>uo295432@uniovi.es</accionMail>
+        <etiquetaMensaje>Mensaje:</etiquetaMensaje>
+        <textoBoton>Enviar Mensaje</textoBoton>
+      </formulario>
+    </contacto>
+
+  </paginas>
+</sitioWeb>

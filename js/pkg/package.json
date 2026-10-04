@@ -1,0 +1,15 @@
+{
+  "name": "wasm-generator",
+  "type": "module",
+  "version": "0.1.0",
+  "files": [
+    "wasm_generator_bg.wasm",
+    "wasm_generator.js",
+    "wasm_generator.d.ts"
+  ],
+  "main": "wasm_generator.js",
+  "types": "wasm_generator.d.ts",
+  "sideEffects": [
+    "./snippets/*"
+  ]
+}

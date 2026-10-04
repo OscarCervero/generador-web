@@ -1,0 +1,234 @@
+:root {
+  --color-fondo: #0f172a;
+  --color-superficie: #1e293b;
+  --color-borde: #334155;
+  --color-texto: #f8fafc;
+  --color-texto-muted: #94a3b8;
+  --color-primario: #0284c7;
+  --color-primario-hover: #0369a1;
+  --color-acento: #10b981;
+  --color-codigo-bg: #090d16;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  background-color: var(--color-fondo);
+  color: var(--color-texto);
+  line-height: 1.6;
+  font-size: 1rem;
+}
+
+/* Cabecera y Navegación */
+body > header {
+  background-color: var(--color-superficie);
+  border-bottom: 0.08rem solid var(--color-borde);
+  padding: 1rem 2rem;
+}
+
+body > header > nav {
+  max-width: 75rem;
+  margin-inline: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+body > header > nav > a {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--color-texto);
+  text-decoration: none;
+  letter-spacing: -0.03em;
+}
+
+body > header > nav > ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 1rem;
+}
+
+body > header > nav > ul > li > a {
+  background-color: var(--color-primario);
+  color: #ffffff;
+  padding: 0.5rem 1rem;
+  border-radius: 0.4rem;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.9rem;
+  display: inline-block;
+}
+
+/* Contenedor principal */
+body > main {
+  max-width: 75rem;
+  margin: 2rem auto;
+  padding-inline: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+/* Secciones como tarjetas de interfaz */
+body > main > section {
+  background-color: var(--color-superficie);
+  border: 0.08rem solid var(--color-borde);
+  border-radius: 0.65rem;
+  padding: 1.75rem;
+  box-shadow: 0 0.25rem 0.4rem -0.06rem rgba(0, 0, 0, 0.25);
+}
+
+body > main > section > h1,
+body > main > section > h2 {
+  margin-top: 0;
+  color: #38bdf8;
+  font-size: 1.4rem;
+  border-bottom: 0.08rem solid var(--color-borde);
+  padding-bottom: 0.75rem;
+}
+
+body > main > section > p {
+  color: var(--color-texto-muted);
+}
+
+/* Formulario de carga */
+body > main > section form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  margin-top: 1.5rem;
+}
+
+body > main > section form p {
+  margin: 0;
+}
+
+body > main > section form label {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  font-weight: 600;
+  color: var(--color-texto);
+}
+
+body > main > section form input[type="file"] {
+  background-color: var(--color-fondo);
+  border: 0.08rem dashed var(--color-borde);
+  padding: 0.85rem;
+  border-radius: 0.5rem;
+  color: var(--color-texto-muted);
+  cursor: pointer;
+  width: 100%;
+}
+
+body > main > section form input[type="file"]::file-selector-button {
+  background-color: var(--color-borde);
+  color: var(--color-texto);
+  border: none;
+  padding: 0.45rem 0.9rem;
+  border-radius: 0.3rem;
+  cursor: pointer;
+  margin-right: 1rem;
+  font-size: 0.9rem;
+}
+
+/* Botones de acción */
+button {
+  background-color: var(--color-primario);
+  color: #ffffff;
+  border: none;
+  padding: 0.65rem 1.25rem;
+  border-radius: 0.4rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+  font-size: 0.9rem;
+}
+
+button:hover {
+  background-color: var(--color-primario-hover);
+}
+
+button:active {
+  transform: scale(0.98);
+}
+
+/* Consola de logs */
+body > main > section[aria-live="polite"] article {
+  background-color: var(--color-fondo);
+  border: 0.08rem solid var(--color-borde);
+  border-radius: 0.45rem;
+  padding: 1rem;
+}
+
+body > main > section[aria-live="polite"] h3 {
+  margin: 0 0 0.5rem 0;
+  font-size: 0.9rem;
+  color: var(--color-texto-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+body > main > section[aria-live="polite"] p {
+  margin: 0;
+  font-family: "Cascadia Code", Consolas, "Courier New", monospace;
+  font-size: 0.88rem;
+  white-space: pre-wrap;
+  word-break: break-word;
+  color: #a7f3d0;
+}
+
+/* Barra de selección de páginas generadas */
+body > main > section:last-of-type > nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-block: 1.5rem 1.2rem;
+  padding-bottom: 1.2rem;
+  border-bottom: 0.08rem solid var(--color-borde);
+}
+
+/* Contenedor del visor de código */
+body > main > section:last-of-type article {
+  background-color: var(--color-codigo-bg);
+  border: 0.08rem solid var(--color-borde);
+  border-radius: 0.5rem;
+  padding: 1.25rem;
+  width: 100%;
+}
+
+/* Código preformateado: contención estricta lateral */
+pre {
+  margin: 0;
+  width: 100%;
+  max-height: 35rem;
+  overflow-x: auto;
+  overflow-y: auto;
+  white-space: pre;
+  tab-size: 2ch;
+}
+
+code {
+  font-family: "Cascadia Code", Consolas, "Courier New", monospace;
+  font-size: 0.88rem;
+  color: #e2e8f0;
+  display: block;
+  min-width: 100%;
+}
+
+/* Pie de página */
+body > footer {
+  border-top: 0.08rem solid var(--color-borde);
+  padding: 2rem 1.5rem;
+  text-align: center;
+  color: var(--color-texto-muted);
+  font-size: 0.85rem;
+}
